@@ -10,3 +10,6 @@ Learned to write any sample string and print it by skipping vovels by five ways
    using '"".join' statement
 5) a = "".join([x for x in s if x not in "aeiouAEIOU"])
    using the '"".join' statement for 'x for x in s if x not in "aeiouAEIOU"'
+
+#Program1.py
+Learned to created a program which approves when certain conditions are satisfied
