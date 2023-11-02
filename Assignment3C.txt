@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            body {
+                border : 2px solid;
+            }
+        </style>
+        <title>Assignment 3</title>
+        <style>
+            ul{
+                list-style: none;
+            }
+
+            li{
+                margin-left: 200px;
+                border:1px solid;
+                margin:10px;
+                width:100px;
+                align-items: center;
+                text-align: center;
+                padding:10px;
+                display: inline-block;
+                background-color: grey;
+                color: black;
+                margin-left: 120px;
+                border-radius: 7px;
+                font: bold 16px 'calibri';
+            }
+
+            li:hover{
+                background-color: b;
+                color: white;
+                font:bold 16px 'calibri';
+                cursor: pointer;
+                box-shadow: 3px 3px 10px grey;
+                border-radius: 7px;
+            }
+        </style>
+        <style>#img-1{
+            width:900px;
+            height:400px;
+            margin-left:150px;
+            border:2px solid;
+        }
+        </style>
+    </head>
+    <body>
+        <h1 style = "margin-top: 20px;margin-left: 10px;font:bold 36px;background-color: royalblue; text-align: center;"><span style = "color : rgb(197, 194, 194); font : bold;margin-left: 0px;padding-left: 0px;">Life</span><span style = "color : white; font : bold;">&nbsp;-</span><span style = "color : rgb(197, 194, 194); font : bold;">&nbsp;care</span><span style = "color : white; font : bold;">&nbsp;Hospital</span></h1>
+        <ul>
+            <li>Staff</li>
+            <li>Speciality</li>
+            <li>Doctors</li>
+            <li>Contact</li>
+        </ul>
+        <br>
+        <img id = "img-1" src="C:\Users\Guest1\Documents\HTML\159535.jpg" alt="">
+        <h2 style="margin-left: 30px;margin-top: 20px;font: bold;margin-bottom: 20px;">Contact :</h2>
+        <p style="margin-left: 30px;margin-top: 20px;margin-bottom: 20px;margin-right: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nulla officia irure voluptate quis non est nostrud consectetur aliqua ipsum ex veniam cillum.Proident irure officia labore voluptate mollit consequat veniam exercitation ea laboris dolor ipsum pariatur.Exercitation nulla commodo incididunt proident dolor officia dolore dolor ut cillum eu elit enim ut.Pariatur dolor nulla sit in anim sit magna aliqua.Dolor eu in fugiat exercitation anim est laborum nostrud ex.Magna proident est eu anim dolor eu amet esse.Labore ad nisi laboris enim exercitation excepteur fugiat dolor laborum.Est cillum enim reprehenderit id dolore irure deserunt quis.Elit nisi eiusmod adipisicing aliqua officia commodo magna velit occaecat cillum ipsum.Ut mollit labore fugiat cupidatat incididunt nulla ipsum commodo aliquip in ullamco pariatur ullamco ullamco.Laboris pariatur veniam quis veniam duis anim culpa ipsum nisi sunt ea.Tempor labore sit aliquip ea est.Ullamco dolore est magna labore ut commodo.Aute esse eu elit ipsum voluptate ex.Ullamco cillum est fugiat occaecat ea magna sit elit consequat.Ex amet ullamco mollit aliquip aliqua mollit officia qui anim laborum quis velit sint.Minim nulla eu dolore ex veniam tempor reprehenderit incididunt esse tempor aute laboris.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>
