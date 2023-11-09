@@ -1,0 +1,109 @@
+CREATE TABLE category(
+	id			INT PRIMARY KEY,
+    category	VARCHAR(30) NOT NULL
+);
+CREATE TABLE product(
+	id				INT PRIMARY KEY,
+    prodname		VARCHAR(100) NOT NULL,
+    description		VARCHAR(100) NOT NULL,
+    fkcategory		INT NOT NULL,
+    FOREIGN KEY(fkcategory) REFERENCES category(id)
+);
+CREATE TABLE vendor(
+	id					INT PRIMARY KEY,
+    regestration_date	DATE NOT NULL,
+    vendor_name			VARCHAR(100) NOT NULL,
+    company				VARCHAR(100) NOT NULL
+);
+CREATE TABLE purchaseorder(
+	id			INT PRIMARY KEY,
+    po_date		DATE NOT NULL,
+    fkvendor	INT NOT NULL,
+    fkcategory	INT NOT NULL,
+    FOREIGN KEY(fkvendor) REFERENCES vendor(id),
+    FOREIGN KEY(fkcategory) REFERENCES category(id)
+);
+CREATE TABLE po_product(
+	id 				INT PRIMARY KEY,
+    fkpurchaseoder	DATE NOT NULL,
+    fkproduct		INT NOT NULL,
+    cost			INT NOT NULL,
+    qty				INT NULL,
+    tax				DECIMAL(10,2) NULL,
+    FOREIGN KEY(fkpurchaseorder) REFERENCES purchaseorder(id),
+    FOREIGN KEY(fkproduct) REFERENCES product(id)
+);
+CREATE TABLE sales(
+	id				INT PRIMARY KEY,
+    sales_date		DATE NOT NULL,
+    fkproduct		INT NOT NULL,
+    cost			DECIMAL(10,2) NOT NULL,
+    available_qtys	INT NOT NULL,
+    FOREIGN KEY(fkproduct) REFERENCES product(id)
+);
+CREATE TABLE customer(
+	id				INT PRIMARY KEY,
+    customer_name	VARCHAR(100) NOT NULL,
+    address			VARCHAR(100) NOT NULL,
+    city			VARCHAR(100) NOT NULL,
+    contact			VARCHAR(15) NOT NULL
+);
+CREATE TABLE invoice(
+	id				INT PRIMARY KEY,
+    invoice_date	DATE NOT NULL,
+    fkcustomer		INT NOT NULL,
+    FOREIGN KEY(fkcustomer) REFERENCES customer(id)
+);
+CREATE TABLE cost(
+	id			INT PRIMARY KEY,
+    fkinvoice	INT NOT NULL,
+    fkcustomer	INT NOT NULL,
+    cost		DECIMAL(10,2) NOT NULL,
+    issued_qtys	INT NOT NULL,
+    FOREIGN KEY(fkinvoice) REFERENCES invoice(id),
+    FOREIGN KEY(fkcustomer) REFERENCES customer(id)
+);
+INSERT INTO category(id, category) VALUES
+		(11,'Grossary'),
+        (12,'Health'),
+        (13,'Stationary'),
+        (14,'Electronics'),
+        (15,'Sports');
+INSERT INTO product(id, prodname, description, fkcategory) VALUES
+		(801,'Tennis Ball','Tough and Premium Product',15),
+        (802,'Aple I phone','Dual sim premium phone',14),
+        (803,'Samsung Smartwatch','10th series watch',14),
+        (804,'Sport Shoes','sporty and smooth',15),
+        (805,'Rice','Agra Rice',11),
+        (806,'Edible Oil','high in e vitamin low caleries',11),
+        (807,'Classmate Notebook','150 Pages long book',13),
+        (808,'Protien','Good health care',12);
+INSERT INTO vendor(id, regestration_date, vendor_name, company) VALUES 
+		(1,'2009-03-20','Peter Mathew', 'Crown Industries'),
+        (2,'2005-10-14','Kang Johnson', 'Star Suppliers'),
+		(3,'2009-08-16','James David', 'Om Enterprices');
+INSERT INTO purchaseorder(id, po_date, fkvendor)VALUES
+		(61, '2022-01-08', 1),
+		(62, '2022-01-15', 2),
+		(63, '2022-02-13', 2),
+		(64, '2022-05-13', 3),
+		(65, '2022-07-16', 3),
+		(66, '2022-08-21', 2),
+		(67, '2022-08-08', 3),
+		(68, '2022-09-16', 2),
+		(69, '2022-09-22', 1),
+		(70, '2022-12-31', 1);
+INSERT INTO po_product(id,fkpurchaseorder,fkproduct,cost,qtys)VALUES
+        (501,61,805,100.00,20),
+		(502,61,802,60000.00,1),
+        (503,61,805,150.00,18),
+        (504,62,803,35000.00,13),
+        (505,62,801,500.00,19),
+        (506,62,807,350.00,11),
+        (507,63,805,140.00,5),
+        (508,63,806,250.00,6),
+        (509,63,802,52000.00,8),
+        (510,63,802,62000.00,5),
+        (511,64,805,240.00,3),
+        (512,65,802,68000.00,2),
+        (513,65,808,160.00,14);
