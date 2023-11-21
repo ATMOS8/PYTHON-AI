@@ -1,0 +1,58 @@
+Health Insurance Policies -> Data
+
+InsuaranceCompany
+id	company name	registration_date	headquarter	
+1	LIC		05/Sept/1992		Mumbai
+
+20+
+
+InsuranceCompanyBranch
+id	foreignkeyInsuranceCompany	Location	Pincode		Emailid	
+1	1				Pune		410241		support.pune@lic.com				
+2	1				Nashik		401521		support.nashik@lic.com		
+
+200+
+
+
+PolicyCategory
+id	category
+1	Health
+2	Vechicle	
+3	Property
+
+
+PolicyScheme
+id	fkPolicyCategory	fkInsuranceCompany	schemeStartDate	schemeEndDate 	SchemeName			policyamount	status	
+1	2			1			 				RGO Car Insurance				disabled
+2	2			1			 				ERGO Car Insurance				active
+
+200+
+
+User
+id	fname	mname	lname	gender	age	city	contactno
+
+500+
+
+SalesOrder
+id	date	fkuser	fkpolicyscheme	premium	 InsuranceCompanyBranch		status
+										live/expired
+			
+note: 
+age>=65			: policyamt*12%
+age between 50 to 65	: policyamt*10%
+age between 35 to 50    : policyamt*5%
+age between 20 to 35    : policyamt*2% 
+
+status:
+policy is due on 1 month : due
+policy exceeded due date : expired
+otherwise	         : live
+
+1000+
+
+
+
+
+
+
+
