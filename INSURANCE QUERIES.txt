@@ -1,0 +1,116 @@
+1) INSURANCE COMPANY
+
+SELECT * FROM insurance.insurance_company;
+
+INSERT INTO insurance.insurance_company(company_id, company_name, registration_date, headquarter)
+VALUES(21, "ICICI LOMBARD", "2001-01-01", "San Fransisco");
+
+SELECT * FROM insurance.insurance_company;
+
+UPDATE insurance.insurance_company
+SET company_name = "TATA AIG", registration_date = "2002-02-02", headquarter = "Delhi"
+WHERE company_id = 21;
+
+SELECT * FROM insurance.insurance_company;
+
+DELETE FROM insurance.insurance_company WHERE company_id = 21;
+
+SELECT * FROM insurance.insurance_company;
+
+
+2) INSURANCE COMPANY BRANCH
+
+SELECT * FROM insurance.insurance_company_branch;
+
+INSERT INTO insurance.insurance_company_branch(id, fk_insurance_company, location, pincode, email_id)
+VALUES(201, 20, "Delhi", "40140", "support.delhi@xyz.com");
+
+SELECT * FROM insurance.insurance_company_branch;
+
+UPDATE insurance.insurance_company_branch
+SET fk_insurance_company = "15", location = "Sangli", pincode = "416416", email_id = "support.sangli@DAC.com"
+WHERE id = 201;
+
+SELECT * FROM insurance.insurance_company_branch;
+
+DELETE FROM insurance.insurance_company_branch WHERE id = 201;
+
+
+3) POLICY CATAGORY
+
+SELECT * FROM insurance.policy_catagory;
+
+INSERT INTO insurance.policy_catagory(Id, Catagory)
+VALUES(201, "Phone Insurance");
+
+SELECT * FROM insurance.policy_catagory;
+
+UPDATE insurance.policy_catagory
+SET Catagory = "Travel Insurance"
+WHERE Id = 201;
+
+SELECT * FROM insurance.policy_catagory;
+
+DELETE FROM insurance.policy_catagory WHERE Id = 201;
+
+SELECT * FROM insurance.policy_catagory;
+
+
+4)POLICY SCHEME
+
+SELECT * FROM insurance.policy_scheme;
+
+INSERT INTO insurance.policy_scheme(id, fk_policy_catagory, fk_insurance_company, scheme_start_date, scheme_end_date, scheme_name, policy_amount, status)
+VALUES(231, 12, 15, "2022-11-23", "2023-11-22", "Laptop Gold", 6000, "disabled");
+
+SELECT * FROM insurance.policy_scheme;
+
+UPDATE insurance.policy_scheme
+SET fk_policy_catagory = "15", fk_insurance_company = 5, scheme_start_date = "2020-05-14", scheme_end_date = "2021-05-15", scheme_name = "Travel Blue", policy_amount = 10000, status = "disabled"
+WHERE id = 231;
+
+SELECT * FROM insurance.policy_scheme;
+
+DELETE FROM insurance.policy_scheme WHERE id = 231;
+
+SELECT * FROM insurance.policy_scheme;
+
+
+5) USERS
+
+SELECT * FROM insurance.users;
+
+INSERT INTO insurance.users(id, fname, mname, lname, gender, age, city, contact_no, type, emailid, password)
+VALUES(651, "Nickolas", "Joseph", "Fury", "male", 55, "New York", "9956022666", "admin", "nick.fury@shield.com", 193664);
+
+SELECT * FROM insurance.users;
+
+UPDATE insurance.users
+SET fname = "Phillip", mname = "J", lname = "Coulson", gender = "male", age = 45, city = "Los Angeles", contact_no = 9422411366, type = "admin", emailid = "phill.coulson@shield.com", password = 968084
+WHERE id = 651;
+
+SELECT * FROM insurance.users;
+
+DELETE FROM insurance.users WHERE id = 651;
+
+SELECT * FROM insurance.users;
+
+
+6) SALES
+
+SELECT * FROM insurance.sales;
+
+INSERT INTO insurance.sales(id, date, fk_user, fk_policy_scheme, premium, insurance_company_branch, end_date, status)
+VALUES(1601, "2023-11-06", 5, 3, 110, "9", "2024-11-06", "live");
+
+SELECT * FROM insurance.sales;
+
+UPDATE insurance.sales
+SET date = "2022-10-10", fk_user = 100, fk_policy_scheme = 50, premium = 150, insurance_company_branch = 55, end_date = "2023-10-09", status = "expired"
+WHERE id = 1001;
+
+SELECT * FROM insurance.sales;
+
+DELETE FROM insurance.sales WHERE id = 1001;
+
+SELECT * FROM insurance.sales;
